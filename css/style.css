@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 1s ease;
+}
+
+body {
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'barlow Semi Condensed', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(5, min-content);
+    gap: 25px;
+}
+
+@media (min-width: 576px) {
+    .container {
+        margin-top: 100px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 'one one' 'two three' 'four four' 'five five';
+        grid-template-rows: repeat(4, minmax(min-content, 230px));
+    }
+    .card:first-child {
+        grid-area: one;
+    }
+    .card:nth-child(2) {
+        grid-area: two;
+    }
+    .card:nth-child(3) {
+        grid-area: three;
+    }
+    .card:nth-child(4) {
+        grid-area: four;
+    }
+    .card:nth-child(5) {
+        grid-area: five;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, minmax(min-content, 230px));
+        grid-template-areas: 'one one two' 'three four four' 'five five five';
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 85%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, minmax(min-content, 250px));
+        grid-template-areas: 'one one two five' 'three four four five';
+    }
+}
+
+.card {
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+.card .card-user {
+    display: flex;
+    align-items: center;
+}
+.card-user img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin-right: 13px;
+}
+.card .card-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+.card .card-sub {
+    font-weight: 500;
+    opacity: .5;
+    font-size: 11px;
+}
+.card .card-title {
+    font-weight: 600;
+    font-size: 19px;
+    margin-top: 12px;
+}
+.card .card-quote {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: .8;
+    margin-top: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.1px;
+}
+
+/* daniel */
+.card:first-child {
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-position: top right 25px;
+    background-repeat: no-repeat;
+}
+.card:first-child img {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* jonathan */
+.card:nth-child(2) {
+    background-color: hsl(217, 19%, 35%);
+}
+.card:nth-child(2) img {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* jeanette */
+.card:nth-child(3), .card:nth-child(5) {
+    background-color: white;
+    color: hsl(217, 19%, 35%);
+}
+
+/* patrick */
+.card:nth-child(4) {
+    background-color: hsl(219, 29%, 14%);
+}
+.card:nth-child(4) img {
+    border: 2px solid hsl(263, 55%, 52%);
+}
+
+@media screen and (min-width: 576px) {
+    .card__quote {
+      letter-spacing: 0.1px;
+    }
+    .card:first-child {
+      background-image: url("/images/bg-pattern-quotation.svg");
+      background-repeat: no-repeat;
+      background-position: top right 80px;
+    }
+  }
